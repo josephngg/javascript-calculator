@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  .grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "display display display display"
+    "AC C div times"
+    "seven eight nine minus"
+    "four five six plus"
+    "one two three equal"
+    "zero zero dot equal"
+    ;
+
+    .display {
+      grid-area: display;
+      background-color:black;
+      text-align: right;
+      font-size: 20px;
+
+      input {
+        width: 90%;
+        color: white;
+        padding: 5px 20px;
+        text-align: right;
+        background-color: black;
+        font-size: 20px;
+      }
+      
+
+      .total {
+        padding: 5px 20px;
+        color: yellow;
+      }
+    }
+
+    .pad-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: grey;
+      color:white;
+      border: 1px solid black;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .pad-button:hover {
+      border: 1px solid white;
+      color:#ccc;
+    }
+
+    
+
+    .zero {
+      grid-area: zero;
+    }
+
+    .equal {
+      grid-area: equal;
+      background-color: #5599ff;
+    }
+
+    .number {
+      background-color: #333;
+    }
+
+    .clear {
+      background-color: tomato;
+    }
+
+  }
+}

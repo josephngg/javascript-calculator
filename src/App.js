@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './App.scss';
+import Pad from './Components/Pad';
+import Display from './Components/Display';
 
 function App() {
+
+  const [expression, setExpression] = useState("");
+  const [answer, setAnswer] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="grid">
+        <Display 
+          expression={expression} 
+          setExpression={setExpression} 
+          answer={answer} 
+          setAnswer={setAnswer}
+        />
+        <Pad 
+          expression={expression} 
+          setExpression={setExpression} 
+          answer={answer} 
+          setAnswer={setAnswer}
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
